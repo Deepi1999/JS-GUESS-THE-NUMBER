@@ -1,0 +1,30 @@
+<body style="background-color: rgb(217, 227, 109); 
+justify-content: center; margin-top: 70px; margin-left: 650px;" >
+<h1>Guess the Number</h1>
+<input type="number" id="checknum">
+<button onclick="check()">Check</button>
+<p id="result">You're Wrong or Right</p>
+<p id="score">Score:10</p>
+</body>
+
+<script>
+var num = document.getElementById("checknum")
+var result = document.getElementById("result")
+var score = document.getElementById("score")
+var randomNumber = Math.floor(Math.random()*10)+1
+var totalscore = 10
+
+function check (){
+    var enterednumber = checknum.value
+    if(randomNumber==enterednumber){
+        console.log("Right")
+        result.textContent = "Right"
+        alert("You Won");
+    }
+    else {
+        totalscore=totalscore-1;
+        score.textContent = "score:"+totalscore
+        result.textContent = "Wrong"
+    }
+}
+</script>
